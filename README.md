@@ -82,3 +82,9 @@ Database abstraction layer (`lib/database.ts`) handles initialization, CRUD oper
 - Combined constraints support
 - TEST_MODE for deterministic expiry testing
 - REST API + Web UI
+
+## Live Demo
+https://pastebin-lite-indol-beta.vercel.app
+
+## GitHub Repository
+https://github.com/yourusername/pastebin-lite
