@@ -9,8 +9,8 @@ export async function GET(request: NextRequest) {
   
   // Test 1: Create paste with max_views = 1
   tests.push('Test 1: Paste with max_views = 1');
-  const paste1 = storage.createPaste('Test 1 content', undefined, 1);
-  const view1a = storage.getAndIncrementPaste(paste1.id);
+  const paste1 = await storage.createPaste('Test 1 content', undefined, 1);
+  const view1a = await storage.getAndIncrementPaste(paste1.id);
   const view1b = storage.getAndIncrementPaste(paste1.id);
   tests.push(`  - First fetch: ${view1a ? '200 ✓' : '404 ✗'}`);
   tests.push(`  - Second fetch: ${view1b ? '200 ✗' : '404 ✓'}`);

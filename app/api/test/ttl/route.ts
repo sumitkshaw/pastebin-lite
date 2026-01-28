@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
   const now = new Date();
   const testTime = TimeUtils.getCurrentTime(request);
   
-  const allPastes = storage.getAllPastes();
+  const allPastes = await storage.getAllPastes(); // Need await
   const expiredPastes = allPastes.filter(p => 
     p.expiresAt && p.expiresAt <= testTime
   );

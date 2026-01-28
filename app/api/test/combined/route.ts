@@ -39,14 +39,14 @@ export async function GET(request: NextRequest) {
   const results = [];
   
   for (const test of testPastes) {
-    const paste = storage.createPaste(
+    const paste = await storage.createPaste(  // AWAIT HERE
       test.content,
       test.ttl_seconds,
       test.max_views
     );
     
     // Check initial availability
-    const isAvailable = storage.isPasteAvailable(paste.id, now);
+    const isAvailable = await storage.isPasteAvailable(paste.id, now);  // AWAIT HERE
     
     results.push({
       name: test.name,

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { storage } from '@/lib/storage';
 
 export async function GET() {
-  const allPastes = storage.getAllPastes();
+  const allPastes = await storage.getAllPastes(); // ADD AWAIT
   
   return NextResponse.json({
     count: allPastes.length,
